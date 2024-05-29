@@ -360,7 +360,7 @@ func (p *PodMount) createOrAddRef(ctx context.Context, podName string, jfsSettin
 						}
 					}
 				}
-
+				builder.SetPodAsOwner(&secret, *newPod)
 				if err := p.createOrUpdateSecret(ctx, &secret); err != nil {
 					return err
 				}
